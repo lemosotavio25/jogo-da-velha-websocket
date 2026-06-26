@@ -2,6 +2,10 @@
 
 Projeto minimalista de jogo da velha em tempo real com uma sala unica.
 
+## Link publico
+
+[jogo-da-velha.adoroautomacao.com.br](https://jogo-da-velha.adoroautomacao.com.br/)
+
 ## Precisamos de framework?
 
 Nao. Para manter tudo enxuto, este projeto usa:
