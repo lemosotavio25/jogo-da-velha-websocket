@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jogo da Velha WebSocket</title>
+  <meta
+    name="description"
+    content="Jogo da velha minimalista com uma sala unica em tempo real via WebSocket."
+  >
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <h1>Jogo da Velha</h1>
+      <p class="lede">
+        Uma sala so, duas pessoas jogando em tempo real e o resto assistindo.
+      </p>
+    </section>
+
+    <section class="panel controls">
+      <div class="connection">
+        <span class="status-dot" id="connection-dot"></span>
+        <span id="connection-label">Conectando...</span>
+      </div>
+
+      <div class="actions">
+        <button id="copy-link" class="button" type="button">
+          Copiar link
+        </button>
+      </div>
+
+      <div class="share-box">
+        <span>Link do jogo</span>
+        <code id="share-link">Carregando...</code>
+      </div>
+    </section>
+
+    <section class="layout">
+      <section class="panel board-panel">
+        <div class="identity-card" id="identity-card">
+          <p class="muted">Quem e voce</p>
+          <strong id="role-label">Aguardando</strong>
+          <p class="identity-hint" id="role-hint">
+            O primeiro cliente vira X, o segundo vira O.
+          </p>
+        </div>
+
+        <div class="board" id="board" aria-label="Tabuleiro do jogo">
+          <button class="cell" type="button" data-cell="0"></button>
+          <button class="cell" type="button" data-cell="1"></button>
+          <button class="cell" type="button" data-cell="2"></button>
+          <button class="cell" type="button" data-cell="3"></button>
+          <button class="cell" type="button" data-cell="4"></button>
+          <button class="cell" type="button" data-cell="5"></button>
+          <button class="cell" type="button" data-cell="6"></button>
+          <button class="cell" type="button" data-cell="7"></button>
+          <button class="cell" type="button" data-cell="8"></button>
+        </div>
+
+        <button id="reset-game" class="button button-primary" type="button">
+          Nova rodada
+        </button>
+      </section>
+
+      <aside class="panel sidebar">
+        <div class="pill-row">
+          <div class="pill" id="player-x">X: livre</div>
+          <div class="pill" id="player-o">O: livre</div>
+        </div>
+
+        <div class="info-card status-card" id="status-card">
+          <div class="status-head">
+            <span class="status-icon" id="status-icon" aria-hidden="true">...</span>
+            <div>
+              <p class="muted">Status</p>
+              <strong id="game-status">Abra duas abas ou compartilhe este link.</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <p class="muted">Espectadores</p>
+          <strong id="spectator-count">0</strong>
+        </div>
+
+        <div class="info-card">
+          <p class="muted">Como funciona</p>
+          <p>
+            O primeiro cliente vira <strong>X</strong>, o segundo vira
+            <strong>O</strong>. Os demais assistem a unica sala.
+          </p>
+        </div>
+
+      </aside>
+    </section>
+  </main>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>
